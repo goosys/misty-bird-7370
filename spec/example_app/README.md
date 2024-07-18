@@ -1,24 +1,12 @@
-# README
+# Installing Memo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```console
+cd spec
+rails new example_app -T --skip-docker --skip-keeps -C --skip-bootsnap --database=sqlite3
+rm -rf example_app/.git
+```
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```diff
+# config/application.rb
++ require "sprockets/railtie"
+```

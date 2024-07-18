@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "mistybird/version"
+require_relative "patches/administrate_datetime_default"
 
 module Administrate
   module Mistybird
