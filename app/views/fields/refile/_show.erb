@@ -1,22 +1,23 @@
-<%#
-# Refile Show Partial
-
-This partial renders refile attachment(s),
-to be displayed on a resource's show page.
-
-By default, the attribute is rendered as a link tag.
-
-## Local variables:
-
-- `field`:
-  An instance of [Administrate::Field::Refile][1].
-%>
-
 <% return nil if field.data.nil? %>
-<% if @_requested_resource.public_send("#{field.name}").is_a?(Array) %>
-  <% @_requested_resource.public_send("#{field.name.split('_')[0]}").each do |photo| %>
-    <%= link_to photo.file_filename, attachment_url(photo, :file) %>
+<% if ( field.options[:type] && field.options[:type] == :image ) || ( field.name.end_with?('_image') || field.name == 'image' ) %>
+  <% if field.data.is_a?(Array) %>
+    <% field.resource&.public_send("#{field.name.split('_')[0]}").each do |photo| %>
+      <%= image_tag attachment_url(photo, :file, :limit, 200, 200) %>
+    <% end %>
+  <% else %>
+    <% if field.resource&.try("#{field.name}_content_type") == 'image/svg+xml' %>
+      <%= image_tag attachment_url(field.resource, field.attribute, format: :svg), style: "max-width:200px;max-height:200px" %>
+    <% else %>
+      <%= image_tag attachment_url(field.resource, field.attribute, :limit, 200, 200) %>
+    <% end %>
   <% end %>
+
 <% else %>
-  <%= link_to @_requested_resource.public_send("#{field.name}_filename"), attachment_url(@_requested_resource, field.attribute) %>
+  <% if field.data.is_a?(Array) %>
+    <% field.resource&.public_send("#{field.name.split('_')[0]}").each do |file| %>
+      <%= link_to file.filename, attachment_url(photo, :file) %>
+    <% end %>
+  <% else %>
+    <%= link_to field.resource&.try("#{field.name}_filename").presence || field.data.id.truncate(10), attachment_url(field.resource, field.attribute) %>
+  <% end %>
 <% end %>

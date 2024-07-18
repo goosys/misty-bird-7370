@@ -1,20 +1,19 @@
-<%#
-# Refile Form Partial
-
-This partial renders an attachment_field element for uloading files.
-
-## Local variables:
-
-- `f`:
-  A Rails form generator, used to help create the appropriate input fields.
-- `field`:
-  An instance of [Administrate::Field::Refile][1].
-
-%>
-
 <div class="field-unit__label">
   <%= f.label field.attribute %>
 </div>
 <div class="field-unit__field">
   <%= f.attachment_field field.attribute, direct: field.direct, presigned: field.presigned, multiple: field.multiple %>
+  <% if field.data.present? %>
+    <% if ( field.options[:type] && field.options[:type] == :image ) || ( field.name.end_with?('_image') || field.name == 'image' ) %>
+      <label><%= f.check_box "remove_#{field.attribute}" %> 削除</label>
+      <% if f.object&.try("#{field.name}_content_type") == 'image/svg+xml' %>
+        <%= image_tag attachment_url(f.object, field.attribute, format: :svg), style: "max-width:200px;max-height:200px" %>
+      <% else %>
+        <%= image_tag attachment_url(f.object, field.attribute, :limit, 200, 200) %>
+      <% end %>
+    <% else %>
+      <%= link_to f.object&.try("#{field.name}_filename").presence || field.data.id.truncate(10), attachment_url(f.object, field.attribute), target: :_blank %>
+      <label><%= f.check_box "remove_#{field.attribute}" %> 削除</label>
+    <% end %>
+  <% end %>
 </div>
