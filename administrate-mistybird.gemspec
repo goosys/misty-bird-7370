@@ -36,6 +36,7 @@ Gem::Specification.new do |spec|
   # spec.add_dependency "example-gem", "~> 1.0"
   spec.add_dependency 'rails', '>= 6.0', '< 8'
   spec.add_dependency 'administrate', '>= 0.20.0', '< 1.1.0'
+  spec.add_dependency 'administrate-field-nested_has_many', '2.1.0'
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
