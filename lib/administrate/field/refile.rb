@@ -19,7 +19,7 @@ module Administrate
       # @param attr [Symbol] The attribute name.
       # @param _options [Hash] Additional options (not used).
       # @return [Array<Symbol>] The permitted attributes.
-      def permitted_attribute(attr, _options = {})
+      def self.permitted_attribute(attr, _options = {})
         [ attr, :"remove_#{attr}" ]
       end
 
