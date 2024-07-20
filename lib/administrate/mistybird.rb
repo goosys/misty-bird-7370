@@ -8,6 +8,7 @@ require_relative "patches/dashboard_name_option_to_nested_has_many"
 require_relative "patches/enable_skip_option_in_nested_has_many"
 require_relative "patches/pass_parent_resource_to_nested_has_many"
 require_relative "patches/role_aware_resource_resolver"
+require_relative "patches/scope_option_to_has_many"
 
 module Administrate
   module Mistybird
