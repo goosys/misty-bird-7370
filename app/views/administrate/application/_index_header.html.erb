@@ -18,11 +18,12 @@
   <div>
     <%= link_to(
       t(
-        "administrate.actions.new_resource",
+        "administrate.actions.new_button",
+        default: [:'administrate.actions.new_resource'],
         name: display_resource_name(page.resource_name, singular: true).downcase
       ),
       [:new, namespace, page.resource_path.to_sym],
-      class: "button",
+      class: "button button--info",
     ) if accessible_action?(new_resource, :new) %>
   </div>
 

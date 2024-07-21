@@ -3,3 +3,5 @@ en:
     application:
       home:
         title: Dashboard
+    title:
+      show_resource: "%{model_name} %{resource_name}"
