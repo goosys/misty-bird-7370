@@ -11,6 +11,9 @@ gem "rake", "~> 13.0"
 gem 'refile', require: 'refile/rails', github: 'vitalinfo/refile'
 gem 'refile-mini_magick'
 
+gem "sprockets-rails"
+gem "administrate", github: "goosys/administrate", branch: "feature/contextualize"
+
 group :development, :test do
   gem "rspec", "~> 3.0"
   gem 'rspec-rails'
