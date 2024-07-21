@@ -1,0 +1,15 @@
+<% content_for(:title) do %>
+  <%= t('.title') %>
+<% end unless content_for?(:title) %>
+
+<header class="main-content__header" role="banner">
+  <h1 class="main-content__page-title" id="page-title">
+    <%= content_for(:title) %>
+  </h1>
+</header>
+
+<section class="main-content__body main-content__body--flush">
+
+<%= content_for(:main) %>
+
+</section>
