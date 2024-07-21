@@ -1,10 +1,50 @@
 # Administrate::Mistybird
 
-TODO: Delete this and the text below, and describe your gem
+## Features
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/administrate/mistybird`. To experiment with that code, run `bin/console` for an interactive prompt.
+- [x] Add context to Administrate::Page
+- [x] Refine Field::Refine
+- [x] RoleAwareResourceResolver
+- [x] Refine Field::NestedHasMany & Field::HasMany
+- [ ] Enhance AdministrateRansack
+- [ ] CSV Download
+- [ ] CSV Import
+- [ ] Add hooks before and after each section of each page
+
+## Demo
+
+Here is a sample application that uses this Gem.
+https://github.com/goosys/cool-wave-4209
 
 ## Installation
+
+| | |
+| -- | -- |
+| Ruby | 3.2.x |
+| Rails | 7.1.x |
+| Administrate | 0.20.1 |
+
+Install ImageMagick or GraphicsMagick.
+
+```bash
+# Ubuntu
+$ sudo apt install graphicsmagick
+# Mac OS
+$ brew install graphicsmagick
+```
+
+Add the following to your Gemfile.
+
+```ruby
+gem "sassc-rails"
+gem "refile", require: "refile/rails", github: "vitalinfo/refile", branch: "latest_ruby_rails"
+gem "refile-mini_magick"
+
+gem "administrate", github: "goosys/administrate", branch: "feature/contextualize"
+gem "administrate-mistybird", github: "goosys/misty-bird-7370"
+```
+
+## Development
 
 Install ImageMagick or GraphicsMagick.
 
@@ -33,16 +73,6 @@ To start the sample application, run the following command:
 $ cd spec/example_app
 $ rails s
 ```
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
