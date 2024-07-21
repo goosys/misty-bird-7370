@@ -6,10 +6,16 @@
   <h1 class="main-content__page-title" id="page-title">
     <%= content_for(:title) %>
   </h1>
+
+  <%= content_for(:header_last) %>
 </header>
+
+<%= content_for(:before_main) %>
 
 <section class="main-content__body main-content__body--flush">
 
 <%= content_for(:main) %>
 
 </section>
+
+<%= content_for(:after_main) %>

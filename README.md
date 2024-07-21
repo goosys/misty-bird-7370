@@ -9,7 +9,7 @@
 - [ ] Enhance AdministrateRansack
 - [ ] CSV Download
 - [ ] CSV Import
-- [ ] Add hooks before and after each section of each page
+- [x] Add hooks before and after each section of each page
 
 ## Demo
 
