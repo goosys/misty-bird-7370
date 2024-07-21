@@ -16,7 +16,12 @@ as well as a link to its edit page.
 [1]: http://www.rubydoc.info/gems/administrate/Administrate/Page/Show
 %>
 
-<% content_for(:title) { t("administrate.actions.show_resource", name: page.page_title) } %>
+<% content_for(:title) do %>
+  <%= display_resource_name(page.resource_name) + ' > ' + t(
+    "administrate.actions.show_resource",
+    name: page.page_title
+  ) %>
+<% end %>
 
 <header class="main-content__header">
   <h1 class="main-content__page-title">
