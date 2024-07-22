@@ -31,13 +31,13 @@ All show page attributes of has_one relationship would be rendered
         <% end %>
 
         <% attributes.each do |attribute| %>
-          <dt class="attribute-label">
+          <dt class="attribute-label" id="<%= attribute.name %>">
             <%= t(
               "helpers.label.#{field.associated_class_name.underscore}.#{attribute.name}",
               default: attribute.name.titleize,
             ) %>
           </dt>
-          <dd class="attribute-data attribute-data--<%= attribute.html_class %>">
+          <dd class="attribute-data attribute-data--<%= attribute.html_class %>" data-data-size="<%= attribute.data.try(:size) %>">
             <%= render_field attribute, { page: page } %>
           </dd>
         <% end %>
