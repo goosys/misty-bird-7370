@@ -8,6 +8,7 @@ gemspec
 
 gem "rake", "~> 13.0"
 
+gem "enumerize"
 gem 'refile', require: 'refile/rails', github: 'vitalinfo/refile'
 gem 'refile-mini_magick'
 
