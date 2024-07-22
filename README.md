@@ -4,6 +4,7 @@
 
 - [x] Add context to Administrate::Page
 - [x] Refine Field::Refine
+- [x] Copy Field::Enumerize
 - [x] RoleAwareResourceResolver
 - [x] Refine Field::NestedHasMany & Field::HasMany
 - [ ] Enhance AdministrateRansack
@@ -37,6 +38,7 @@ Add the following to your Gemfile.
 
 ```ruby
 gem "sassc-rails"
+gem "enumerize"
 gem "refile", require: "refile/rails", github: "vitalinfo/refile", branch: "latest_ruby_rails"
 gem "refile-mini_magick"
 

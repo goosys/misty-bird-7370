@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "mistybird/version"
+require_relative "field/enumerize"
 require_relative "field/refile"
 require_relative "role_aware_resource_resolver"
 require_relative "patches/administrate_datetime_default"
