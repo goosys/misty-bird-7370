@@ -29,3 +29,14 @@
 
   <%= content_for(:header_last) %>
 </header>
+
+<% if @ransack_results.present? %>
+  <section class="ransack-filters-container">
+    <%= render(
+      "administrate_ransack/filters",
+      attribute_types: (page.collection_filter_types.presence || page.attribute_types),
+      page: page,
+      namespace: namespace
+    ) %>
+  </section>
+<% end %>
