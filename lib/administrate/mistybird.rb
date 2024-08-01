@@ -3,6 +3,7 @@
 require_relative "mistybird/version"
 require_relative "field/enumerize"
 require_relative "field/refile"
+require_relative "custom_model_for_form_for"
 require_relative "role_aware_resource_resolver"
 require_relative "patches/administrate_datetime_default"
 # require_relative "patches/administrate_view_generator"
