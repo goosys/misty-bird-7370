@@ -1,1 +1,12 @@
-<%= t('administrate.fields.has_many.pluralize', count: field.data.size) %>
+<%=
+  t(
+    "administrate.fields.has_many.pluralize.attributes.#{field.resource.class.model_name.i18n_key}/#{field.attribute}",
+    default: [
+      :"administrate.fields.has_many.pluralize.models.#{field.associated_class.model_name.i18n_key}",
+      :'administrate.fields.has_many.pluralize'
+    ],
+    count: ( count = field.data.size ),
+    pluralize: pluralize(count, ( human = field.associated_class.model_name.human(default: field.associated_class.model_name.human.titleize))),
+    model_name: human.pluralize(count, I18n.locale)
+  )
+%>

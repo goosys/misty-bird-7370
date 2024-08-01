@@ -9,6 +9,7 @@ gemspec
 gem "rake", "~> 13.0"
 
 gem "enumerize"
+gem 'rails-i18n'
 gem "ransack"
 gem 'refile', require: 'refile/rails', github: 'vitalinfo/refile'
 gem 'refile-mini_magick'
