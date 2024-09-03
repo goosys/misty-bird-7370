@@ -1,5 +1,13 @@
 en:
   administrate:
+    # fields:
+    #   has_many:
+    #     pluralize:
+    #       zero: ""
+    #       one: "%{pluralize}"
+    #       other: "%{pluralize}"
+    #       # other: "%{count} %{model_name}"
+    #       # other: "%{count} Items"
     application:
       home:
         title: Dashboard

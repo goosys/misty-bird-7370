@@ -39,6 +39,7 @@ Add the following to your Gemfile.
 ```ruby
 gem "sassc-rails"
 gem "enumerize"
+gem 'rails-i18n'
 gem "refile", require: "refile/rails", github: "vitalinfo/refile", branch: "latest_ruby_rails"
 gem "refile-mini_magick"
 
