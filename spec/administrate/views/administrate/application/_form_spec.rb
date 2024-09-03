@@ -20,6 +20,8 @@ describe "administrate/application/_form", type: :view do
 
       expect(rendered).to match('id="new_book')
       expect(rendered).to match('action="/admin/books/new"')
+    ensure
+      remove_constants :Book
     end
   end
 
@@ -43,6 +45,8 @@ describe "administrate/application/_form", type: :view do
   
         expect(rendered).to match('id="new_book')
         expect(rendered).to match('action="/admin/books/new"')
+      ensure
+        remove_constants :Book
       end
     end
 
@@ -68,6 +72,8 @@ describe "administrate/application/_form", type: :view do
 
         expect(rendered).to match('id="new_image')
         expect(rendered).to match('action="/admin/books/1/images/new"')
+      ensure
+        remove_constants :Book, :Image
       end
     end
   end
