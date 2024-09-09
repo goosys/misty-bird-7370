@@ -27,6 +27,7 @@
     ) if accessible_action?(new_resource, :new) %>
   </div>
 
+  <%= render("import_buttons", page: page, new_resource: new_resource) %>
   <%= content_for(:header_last) %>
 </header>
 

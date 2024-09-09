@@ -1,0 +1,11 @@
+<%= form_tag({ controller: page.resource_name.pluralize, action: :import_for_delete }, method: :post, multipart: true) do %>
+  <%= file_field_tag :csv_file, required: true %>
+  <div class="import-form-buttons">
+    <%= submit_tag t('administrate.actions.import_for_delete_button'), class: 'button btn-danger', data: { disable_with: false } %>
+    <%= link_to  t('administrate.actions.download_invalid_resource'),
+      { controller: page.resource_name.pluralize, action: :download_invalid_resource },
+      format: :csv,
+      class: 'button'
+    %>
+  </div>
+<% end %>
