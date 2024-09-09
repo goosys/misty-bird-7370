@@ -1,4 +1,14 @@
 <div class="filters-buttons">
-  <%= form.submit t('administrate_ransack.filters.search'), name: nil %>
-  <%= link_to t('administrate_ransack.filters.clear_filters'), clear_filters_path, class: 'btn-clear-filters' %>
+  <%= hidden_field_tag :format, 'html', id: 'search-request-format' %>
+  <%= button_tag class: 'button button--search', onclick: "$('#search-request-format').val('html');" do %>
+    <span class="show-when-enabled"><%= t('administrate_ransack.filters.search') %></span>
+    <span class="show-when-disabled"><%= t('administrate_ransack.filters.searching', default: :'administrate_ransack.filters.search') %></span>
+  <% end %>
+  <% if defined?(show_export_button) && show_export_button %>
+    <%= button_tag class: 'button button--export', data: { disable_with: false, turbo: false }, onclick: "$('#search-request-format').val('csv');" do %>
+      <span class="show-when-enabled"><%= t('administrate_ransack.filters.csv_export') %></span>
+      <span class="show-when-disabled"><%= t('administrate_ransack.filters.csv_exporting', default: :'administrate_ransack.filters.csv_export') %></span>
+    <% end %>
+  <% end %>
+  <%= link_to t('administrate_ransack.filters.clear_filters'), clear_filters_path, class: 'button button--clear-filters' %>
 </div>

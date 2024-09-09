@@ -1,0 +1,66 @@
+# vim: set ft=ruby:
+
+#
+# thx https://github.com/aki77/csb
+# usage https://qiita.com/aki77/items/d9d453ed288f6302fd15#%E4%BD%BF%E3%81%84%E6%96%B9
+#
+return '' if @dashboard.collection_export_types.blank?
+
+# see https://github.com/thoughtbot/administrate/blob/master/lib/administrate/base_dashboard.rb#L92
+attribute_includes =
+  @dashboard.collection_export_types.map do |attr_name, type|
+    attr_name if type.associative?
+  end.compact
+resources.includes(*attribute_includes) unless attribute_includes.empty?
+
+# 
+csv.items = resources.except(:limit, :offset).find_each
+csv.filename = "#{resource_class.name.tableize}.#{Time.current.to_i}.csv"
+
+# 
+@dashboard.collection_export_types.each do |attr_name, type|
+  field = type.new(attr_name, nil, page, resource: authorized_new_resource)
+  input_type = type.is_a?(Administrate::Field::Deferred) ? type.deferred_class.to_s : type.to_s
+
+  header = t(
+    "administrate_exportable.label.#{page.resource_name}.#{attr_name}",
+    default: [
+      :"activerecord.attributes.#{resource_class.name.downcase}.#{resource_name}/#{attr_name}",
+      :"activerecord.attributes.#{page.resource_name}.#{attr_name}",
+      resource_class.human_attribute_name(attr_name)
+    ]
+  )
+
+  # 
+  csv.cols.add(header, attr_name) { |r|
+    field = type.new(attr_name, r.public_send(attr_name), page, resource: r)
+    
+    # thx https://github.com/SourceLabsLLC/administrate_exportable/blob/master/lib/administrate_exportable/exporter_service.rb#L40
+    transform_on_export = type.respond_to?(:options) && type.options[:transform_on_export]
+    if transform_on_export.is_a? Proc
+      transform_on_export.call(field)
+    else
+      case field.class.to_s
+      when Administrate::Field::BelongsTo.to_s, Administrate::Field::HasOne.to_s, Administrate::Field::Polymorphic.to_s
+        field.display_associated_resource if field.data
+      when Administrate::Field::HasMany.to_s
+        field.data.count if field.data
+      when Administrate::Field::DateTime.to_s
+        field.datetime if field.data
+      when Administrate::Field::Date.to_s
+        field.date if field.data
+      when Administrate::Field::Email.to_s, Administrate::Field::Select.to_s
+        field.data
+      when Administrate::Field::Password.to_s
+        field.truncate
+      when Administrate::Field::Time.to_s
+        field.data.strftime("%I:%M%p").to_s if field.data
+      when Administrate::Field::String.to_s, Administrate::Field::Text.to_s
+        #Do not truncate
+        field.data
+      else
+        field.to_s
+      end
+    end
+  }
+end
