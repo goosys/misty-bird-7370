@@ -7,8 +7,8 @@
 - [x] Copy Field::Enumerize
 - [x] RoleAwareResourceResolver
 - [x] Refine Field::NestedHasMany & Field::HasMany
-- [ ] Enhance AdministrateRansack
-- [ ] CSV Download
+- [x] Enhance AdministrateRansack
+- [x] CSV Download
 - [ ] CSV Import
 - [x] Add hooks before and after each section of each page
 
@@ -37,11 +37,12 @@ $ brew install graphicsmagick
 Add the following to your Gemfile.
 
 ```ruby
-gem "sassc-rails"
+gem "csb"
 gem "enumerize"
 gem 'rails-i18n'
 gem "refile", require: "refile/rails", github: "vitalinfo/refile", branch: "latest_ruby_rails"
 gem "refile-mini_magick"
+gem "sassc-rails"
 
 gem "administrate", github: "goosys/administrate", branch: "feature/contextualize"
 gem "administrate-mistybird", github: "goosys/misty-bird-7370"
