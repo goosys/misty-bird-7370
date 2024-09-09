@@ -1,0 +1,10 @@
+# vim: set ft=ruby:
+
+return '' if @csv_data.blank?
+
+csv.items = @csv_data
+csv.filename = "#{resource_class.name.tableize}_import_format.csv"
+
+@csv_header.each do |attr_name, header|
+  csv.cols.add(header, attr_name) { |r| r[attr_name]}
+end

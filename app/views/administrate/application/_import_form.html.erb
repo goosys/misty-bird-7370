@@ -1,0 +1,11 @@
+<%= form_tag({ controller: page.resource_name.pluralize, action: :import }, method: :post, multipart: true) do %>
+  <%= file_field_tag :csv_file, required: true %>
+  <div class="import-form-buttons">
+    <%= submit_tag t('administrate.actions.import_button'), class: 'button btn-update', data: { disable_with: false } %>
+    <%= link_to  t('administrate.actions.download_csv_format'),
+      { controller: page.resource_name.pluralize, action: :download_csv_format },
+      format: :csv,
+      class: 'button'
+    %>
+  </div>
+<% end %>

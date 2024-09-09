@@ -1,0 +1,23 @@
+<% if accessible_action?(new_resource, :import_for_delete) %>
+  <div class='import-link-button'>
+    <% modal_target_import_for_delete = 'modal-import-for-delete-'.concat(page.resource_name) %>
+    <span class="modal-link button btn-danger" data-modal-target="<%= modal_target_import_for_delete %>">
+      <%= t('administrate.actions.import_for_delete', name: page.resource_name.titleize.downcase) %>
+    </span>
+  </div>
+  <%= render 'modal', modal_target: modal_target_import_for_delete do %>
+    <%= render 'import_form_for_delete', page: page %>
+  <% end %>
+<% end %>
+
+<% if accessible_action?(new_resource, :import) %>
+  <div class='import-link-button'>
+    <% modal_target_import = 'modal-import-'.concat(page.resource_name) %>
+    <span class="modal-link button btn-info" data-modal-target="<%= modal_target_import %>">
+      <%= t('administrate.actions.import_resource', name: page.resource_name.titleize.downcase) %>
+    </span>
+  </div>
+  <%= render 'modal', modal_target: modal_target_import do %>
+    <%= render 'import_form', page: page %>
+  <% end %>
+<% end %>
