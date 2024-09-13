@@ -4,7 +4,7 @@
     <span class="show-when-enabled"><%= t('administrate_ransack.filters.search') %></span>
     <span class="show-when-disabled"><%= t('administrate_ransack.filters.searching', default: :'administrate_ransack.filters.search') %></span>
   <% end %>
-  <% if defined?(show_export_button) && show_export_button %>
+  <% if defined?(show_export_button?) && show_export_button? %>
     <%= button_tag class: 'button button--export', data: { disable_with: false, turbo: false }, onclick: "$('#search-request-format').val('csv');" do %>
       <span class="show-when-enabled"><%= t('administrate_ransack.filters.csv_export') %></span>
       <span class="show-when-disabled"><%= t('administrate_ransack.filters.csv_exporting', default: :'administrate_ransack.filters.csv_export') %></span>
