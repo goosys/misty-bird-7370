@@ -37,7 +37,7 @@
           <%= f.select "with_#{field}", options, {include_blank: true}, data: {controller: :select} %>
         <% else %>
           <% field_options = options.is_a?(Hash) ? (options[field.to_s] || {}) : {} %>
-          <%= render "administrate_ransack/components/#{component}", form: f, model: model, field: field, label: label, type: type, options: field_options %>
+          <%= render "administrate_ransack/components/#{component}", form: f, model: model, page: page, field: field, label: label, type: type, options: field_options %>
         <% end %>
       </div>
     <% end %>
