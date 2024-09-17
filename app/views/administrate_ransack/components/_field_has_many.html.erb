@@ -1,7 +1,7 @@
 <% association = model.reflections[field.to_s] %>
 <% if association %>
   <% field_key = AdministrateRansack.ransack?(model, {field => "1,2"}) ? field : "#{field}_id_in" %>
-  <% resource_field = type.new(field, nil, Administrate::Page::Collection.new(@dashboard), resource: model.new) %>
+  <% resource_field = type.new(field, nil, page, resource: model.new) %>
   <% collection = resource_field.associated_resource_options %>
   <%
     field_type = resource_field.options&.dig(:field_type)
