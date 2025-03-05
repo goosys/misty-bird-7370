@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
   spec.add_dependency 'rails', '>= 6.0', '< 8'
-  spec.add_dependency 'administrate', '>= 0.20.0', '< 1.1.0'
+  spec.add_dependency 'administrate', '>= 1.0.0.beta3', '< 1.1.0'
   spec.add_dependency 'administrate-field-nested_has_many', '2.1.0'
   spec.add_dependency 'administrate_ransack'
 
