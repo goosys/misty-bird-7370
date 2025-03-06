@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+set -vx
+
+cp -R `bundle show administrate`/app/views/administrate/application app/views/administrate/
+cp -R `bundle show administrate`/app/views/layouts/administrate app/views/layouts/
+cp -R `bundle show administrate`/app/views/fields/{has_many,has_one,number} app/views/fields/
