@@ -5,7 +5,7 @@ describe Administrate::Field::Number do
   describe "#to_s" do
     context "when the data is nil" do
       it "returns a dash" do
-        field = Administrate::Field::Number.new(:price, nil, :show)
+        field = Administrate::Field::Number.new(:price, nil, :show, suffix: "dallars")
         expect(field.to_s).to eq("-")
       end
     end
