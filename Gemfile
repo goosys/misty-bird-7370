@@ -15,8 +15,8 @@ gem 'refile', require: 'refile/rails', github: 'vitalinfo/refile'
 gem 'refile-mini_magick'
 
 gem "sprockets-rails"
-gem "administrate", github: "goosys/administrate", branch: "feature/contextualize"
-gem "administrate_ransack", github: "goosys/administrate_ransack", branch: "feature/predicates-select-selectize-administrate1-invalid_term"
+gem "administrate", github: "goosys/administrate", branch: "feature/contextualize-resource_instance_variable"
+gem "administrate_ransack", github: "goosys/administrate_ransack", branch: "develop"
 
 group :development, :test do
   gem "rspec", "~> 3.0"
