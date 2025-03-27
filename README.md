@@ -23,7 +23,7 @@ https://github.com/goosys/cool-wave-4209
 | -- | -- |
 | Ruby | 3.2.x |
 | Rails | 7.1.x |
-| Administrate | 0.20.1 |
+| Administrate | 1.0.0.beta3 and contextualize |
 
 Install ImageMagick or GraphicsMagick.
 
@@ -44,7 +44,8 @@ gem "refile", require: "refile/rails", github: "vitalinfo/refile", branch: "late
 gem "refile-mini_magick"
 gem "sassc-rails"
 
-gem "administrate", github: "goosys/administrate", branch: "feature/contextualize"
+gem "administrate", github: "goosys/administrate", branch: "feature/contextualize-resource_instance_variable"
+gem "administrate_ransack", github: "goosys/administrate_ransack", branch: "develop"
 gem "administrate-mistybird", github: "goosys/misty-bird-7370"
 ```
 
