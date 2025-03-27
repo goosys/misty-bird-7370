@@ -2,7 +2,7 @@
 
 module Administrate
   module Mistybird
-    class RansackSearchFieldPermittedDefault
+    module RansackSearchFieldPermittedDefault
       def ransack_search_field_permitted?(form: nil, model: nil, field: nil, label: nil, type: nil, input_type: nil, options: {})
         return if field == :id
         return if input_type == 'Administrate::Field::Refile'
