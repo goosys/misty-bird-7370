@@ -8,6 +8,7 @@ module Administrate
         return if input_type == 'Administrate::Field::Refile'
         return if input_type == 'Administrate::Field::Enumerize' && (@ransack_results.klass.respond_to?("with_#{field}").blank? || @ransack_results.klass.ransackable_scopes.map(&:to_s).include?("with_#{field}").blank?)
         return if input_type == 'Administrate::Field::String' && !(form.search_field "#{field}_cont" rescue nil)
+        true
       end
     end
   end
