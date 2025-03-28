@@ -1,10 +1,6 @@
 require "rails_helper"
 
 describe "administrate/application/_form", type: :view do
-  before do
-    view.lookup_context.prepend_view_paths [File.expand_path("../../../../../app/views", __dir__)] #TODO
-  end
-
   context "when the controller does not have the custom_model_for_form_for method" do
     it "renders the form with the default model" do
       page = Struct.new(:page)

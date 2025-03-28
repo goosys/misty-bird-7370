@@ -1,10 +1,6 @@
 require "rails_helper"
 
 describe "administrate_ransack/components/_filter_buttons", type: :view do
-  before do
-    view.lookup_context.prepend_view_paths [File.expand_path("../../../../../app/views", __dir__)] #TODO
-  end
-
   context "when show_export_button is NOT defined in the Controller" do
     it "does NOT display a button with 'button button--export' class" do
       allow(view).to receive(:clear_filters_path).and_return("/")

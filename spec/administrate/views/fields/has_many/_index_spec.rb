@@ -1,10 +1,6 @@
 require "rails_helper"
 
 describe "fields/has_many/_index", type: :view do
-  before do
-    view.lookup_context.prepend_view_paths [File.expand_path("../../../../../app/views", __dir__)] #TODO
-  end
-
   let(:field_default_formats_en) do
     YAML.safe_load(%(
       administrate:
