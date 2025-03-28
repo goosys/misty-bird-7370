@@ -75,8 +75,7 @@ $ bundle exec rspec
 To start the sample application, run the following command:
 
 ```bash
-$ cd spec/example_app
-$ rails s
+$ bin/rails s
 ```
 
 ## Contributing
