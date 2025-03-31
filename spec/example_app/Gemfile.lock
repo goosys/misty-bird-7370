@@ -318,7 +318,6 @@ PLATFORMS
 
 DEPENDENCIES
   administrate!
-  administrate-field-nested_has_many
   administrate-mistybird!
   administrate_ransack!
   csb

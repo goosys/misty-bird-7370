@@ -64,6 +64,5 @@ gem "refile-mini_magick"
 
 gem "administrate", github: "goosys/administrate", branch: "feature/contextualize-resource_instance_variable"
 gem "administrate_ransack", github: "goosys/administrate_ransack", branch: "develop"
-gem "administrate-field-nested_has_many"
 
 gemspec path: "../../"
