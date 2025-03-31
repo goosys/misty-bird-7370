@@ -42,7 +42,6 @@ gem "enumerize"
 gem 'rails-i18n'
 gem "refile", require: "refile/rails", github: "vitalinfo/refile", branch: "latest_ruby_rails"
 gem "refile-mini_magick"
-gem "sassc-rails"
 
 gem "administrate", github: "goosys/administrate", branch: "feature/contextualize-resource_instance_variable"
 gem "administrate_ransack", github: "goosys/administrate_ransack", branch: "develop"
