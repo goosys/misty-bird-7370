@@ -77,6 +77,13 @@ To start the sample application, run the following command:
 $ bin/rails s
 ```
 
+### Release
+
+```bash
+$ yarn build:css:vendor
+$ yarn build:css
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/administrate-mistybird. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/administrate-mistybird/blob/main/CODE_OF_CONDUCT.md).

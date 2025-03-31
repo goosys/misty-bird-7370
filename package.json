@@ -2,6 +2,7 @@
   "scripts": {
     "build": "esbuild app/assets/javascripts/administrate/application.js --bundle --sourcemap --outdir=app/assets/builds/administrate --public-path=/assets/administrate",
     "build:css": "sass ./app/assets/stylesheets/administrate/application.scss:./app/assets/builds/administrate/application.css --source-map --embed-sources --load-path=node_modules --load-path=$(bundle show administrate)/app/assets/stylesheets --load-path=./app/assets/stylesheets",
+    "build:css:vendor": "sass ./app/assets/stylesheets/vendor/selectize.default.scss:./app/assets/builds/vendor/selectize.default.css ./app/assets/stylesheets/vendor/trix.scss:./app/assets/builds/vendor/trix.css --source-map --embed-sources --load-path=node_modules",
     "lint:css": "stylelint app/assets/stylesheets/administrate/**/*.scss"
   },
   "dependencies": {
