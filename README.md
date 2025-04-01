@@ -82,6 +82,8 @@ $ bin/rails s
 ```bash
 $ yarn build:css:vendor
 $ yarn build:css
+$ yarn build
+$ git status app/assets/builds
 ```
 
 ## Contributing
