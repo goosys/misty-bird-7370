@@ -1,0 +1,49 @@
+
+form[class$=_search] {
+  padding: 1rem 2rem;
+  background: $base-background-color;
+  margin-bottom: 0.5rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-left: -5px;
+}
+
+.filter {
+  width: calc(100% / 4 - 5px);
+  margin-bottom: 1rem;
+  margin-left: 5px;
+
+  label {
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: #999;
+  }
+}
+
+.filters-buttons {
+  display: flex;
+  gap: 8px;
+
+  .button {
+    font-size: 0.8rem;
+  }
+  .button.button--search {
+    order: 2;
+    margin-left: auto;
+    min-width: 10em;
+  }
+  .button.button--export {
+    order: 1;
+    margin-right: auto;
+  }
+  .button.button--clear-filters {
+    order: 3;
+    background-color: $white;
+    color: $black;
+    font-size: 0.7rem;
+  }
+}

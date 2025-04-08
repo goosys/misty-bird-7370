@@ -8,5 +8,10 @@
 /tmp/
 /Gemfile.lock
 
+/node_modules
+
+# Ignore source maps in builds directory
+app/assets/builds/**/*.map
+
 # rspec failure tracking
 .rspec_status

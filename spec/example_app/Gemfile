@@ -6,7 +6,9 @@ ruby "3.2.4"
 gem "rails", "~> 7.1.3", ">= 7.1.3.4"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+# gem "sprockets-rails"
+gem "propshaft"
+gem "cssbundling-rails"
 
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
@@ -54,3 +56,13 @@ group :development do
   # gem "spring"
 end
 
+gem "csb"
+gem "enumerize"
+gem 'rails-i18n'
+gem "refile", require: "refile/rails", github: "vitalinfo/refile", branch: "latest_ruby_rails"
+gem "refile-mini_magick"
+
+gem "administrate", github: "goosys/administrate", branch: "feature/contextualize-resource_instance_variable"
+gem "administrate_ransack", github: "goosys/administrate_ransack", branch: "develop"
+
+gemspec path: "../../"

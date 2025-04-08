@@ -42,7 +42,6 @@ gem "enumerize"
 gem 'rails-i18n'
 gem "refile", require: "refile/rails", github: "vitalinfo/refile", branch: "latest_ruby_rails"
 gem "refile-mini_magick"
-gem "sassc-rails"
 
 gem "administrate", github: "goosys/administrate", branch: "feature/contextualize-resource_instance_variable"
 gem "administrate_ransack", github: "goosys/administrate_ransack", branch: "develop"
@@ -75,8 +74,16 @@ $ bundle exec rspec
 To start the sample application, run the following command:
 
 ```bash
-$ cd spec/example_app
-$ rails s
+$ bin/rails s
+```
+
+### Release
+
+```bash
+$ yarn build:css:vendor
+$ yarn build:css
+$ yarn build
+$ git status app/assets/builds
 ```
 
 ## Contributing

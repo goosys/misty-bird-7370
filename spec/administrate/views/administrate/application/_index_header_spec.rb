@@ -1,10 +1,6 @@
 require "rails_helper"
 
 describe "administrate/application/_index_header", type: :view do
-  before do
-    view.lookup_context.prepend_view_paths [File.expand_path("../../../../../app/views", __dir__)] #TODO
-  end
-
   context "when the controller is not ransack searchable" do
     it "does not render the ransack search form" do
       allow(view).to receive(:content_for).and_return(nil)

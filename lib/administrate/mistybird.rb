@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative "mistybird/engine"
 require_relative "mistybird/version"
 require_relative "mistybird/ransack_search_field_permitted_default"
 require_relative "field/enumerize"
