@@ -3,6 +3,7 @@
 ## Features
 
 - [x] Add context to Administrate::Page
+- [x] Add custom look to Field
 - [x] Refine Field::Refine
 - [x] Copy Field::Enumerize
 - [x] RoleAwareResourceResolver
