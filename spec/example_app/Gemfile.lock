@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/goosys/administrate.git
-  revision: 5691108775fe16301b7025c6b1dec7426cf626a6
+  revision: 189b47d6c2ddf1afe0f0e74193ba21c07fbb6137
   branch: feature/contextualize-resource_instance_variable
   specs:
     administrate (1.0.0.beta3)
