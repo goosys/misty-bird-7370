@@ -2,7 +2,10 @@
   <%= f.label field.attribute %>
 </div>
 <div class="field-unit__field">
-  <%= f.select field.attribute, include_blank: false do %>
-    <%= options_for_select(field.select_options, field.selected) %>
-  <% end %>
+  <%= f.select(
+    field.attribute,
+    options_for_select(field.select_options, field.selected),
+    {include_blank: field.include_blank_option},
+    data: {controller: field.html_controller}
+  ) %>
 </div>

@@ -1,0 +1,3 @@
+<% options = @ransack_results.klass.public_send(field.to_s).values.map {|w| [w.text, w]} %>
+<%= form.label (label || field), class: 'filter-label' %>
+<%= form.select "with_#{field}", options, {include_blank: true}, data: {controller: "select"} %>
