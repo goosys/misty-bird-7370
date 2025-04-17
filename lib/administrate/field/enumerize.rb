@@ -16,6 +16,14 @@ module Administrate
         data unless data.nil?
       end
 
+      def include_blank_option
+        options.fetch(:include_blank, false)
+      end
+
+      def html_controller
+        "select"
+      end
+
       class Engine < ::Rails::Engine
       end
     end
